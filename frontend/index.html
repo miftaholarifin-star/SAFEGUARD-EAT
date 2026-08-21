@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Dashboard implementasi referensi SAFEGUARD EAT" />
+    <title>SAFEGUARD EAT | Traceability dan Quality Gate</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-shield" aria-hidden="true">S</span>
+        <span><strong>SAFEGUARD EAT</strong><small>FOOD SUPPLY CHAIN ASSURANCE</small></span>
+      </a>
+      <span id="api-status" class="api-status pending">Memeriksa API</span>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">TRACEABILITY · IOT · QUALITY GATE</p>
+          <h1>Setiap batch tercatat. Setiap keputusan dapat diperiksa.</h1>
+          <p class="lead">
+            Implementasi referensi manajemen batch pangan untuk pencatatan sensor,
+            verifikasi gizi, ketepatan distribusi, dan audit integritas data.
+          </p>
+          <div class="tags">
+            <span>Versi 1.0.0</span>
+            <span>Data sintetis</span>
+            <span>Hash-chain SHA-256</span>
+          </div>
+        </div>
+        <aside class="guard-card">
+          <p class="eyebrow">STATUS IMPLEMENTASI</p>
+          <strong>PROTOTIPE REFERENSI</strong>
+          <p>
+            Tidak terhubung ke sensor, laboratorium, jaringan blockchain, atau
+            sistem pembayaran produksi.
+          </p>
+        </aside>
+      </section>
+
+      <section class="notice" role="note">
+        <strong>Batas penggunaan.</strong> Nilai ambang pada demo berasal dari draf
+        teknis dan hanya digunakan untuk menguji alur program. Keamanan pangan
+        harus ditetapkan melalui inspeksi, standar produk, dan otoritas berwenang.
+      </section>
+
+      <section class="workspace">
+        <article class="panel form-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">SIMULATOR BATCH</p>
+              <h2>Masukkan Bukti Kualitas</h2>
+            </div>
+            <span class="step">01</span>
+          </div>
+
+          <form id="quality-form">
+            <div class="field-grid">
+              <label>
+                Suhu distribusi (°C)
+                <input id="temperature" type="number" step="0.1" value="6.5" required />
+              </label>
+              <label>
+                Pemenuhan gizi (%)
+                <input id="nutrition" type="number" min="0" max="200" step="0.1" value="95" required />
+              </label>
+              <label>
+                Keterlambatan (menit)
+                <input id="delay" type="number" min="0" step="1" value="15" required />
+              </label>
+              <label>
+                Kelembapan (%)
+                <input id="humidity" type="number" min="0" max="100" step="0.1" value="68" required />
+              </label>
+            </div>
+            <label class="check-row">
+              <input id="documents" type="checkbox" checked />
+              Dokumen batch dinyatakan lengkap pada simulasi
+            </label>
+            <button id="run-demo" type="submit">Jalankan Alur Traceability</button>
+          </form>
+        </article>
+
+        <article class="panel result-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">QUALITY GATE</p>
+              <h2>Hasil Evaluasi</h2>
+            </div>
+            <span class="step">02</span>
+          </div>
+          <div id="decision" class="decision waiting">
+            <span>Status batch</span>
+            <strong id="decision-status">MENUNGGU DATA</strong>
+            <p id="decision-note">Jalankan simulasi untuk menghasilkan evaluasi.</p>
+          </div>
+          <div class="check-grid">
+            <div><span>Suhu</span><strong id="check-temperature">—</strong></div>
+            <div><span>Gizi</span><strong id="check-nutrition">—</strong></div>
+            <div><span>Pengiriman</span><strong id="check-delivery">—</strong></div>
+            <div><span>Dokumen</span><strong id="check-documents">—</strong></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="trace-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">BUKTI KETERLACAKAN</p>
+            <h2>Ringkasan Batch dan Integritas</h2>
+          </div>
+          <span id="batch-code">Belum ada batch</span>
+        </div>
+        <div class="metric-grid">
+          <article><span>Rekaman ledger</span><strong id="ledger-count">—</strong></article>
+          <article><span>Integritas hash</span><strong id="integrity-status">—</strong></article>
+          <article><span>QR token</span><strong id="qr-token">—</strong></article>
+          <article><span>Rekomendasi</span><strong id="payment-status">—</strong></article>
+        </div>
+        <pre id="result-json">Respons API akan tampil di sini.</pre>
+      </section>
+
+      <section class="limitations">
+        <div>
+          <p class="eyebrow">BATAS TEKNIS</p>
+          <h2>Klaim yang dapat diverifikasi</h2>
+        </div>
+        <div class="limitation-grid">
+          <p><strong>Blockchain</strong> Demo memakai hash-chain lokal. Belum ada transaksi jaringan eksternal.</p>
+          <p><strong>IoT</strong> Endpoint menerima telemetri. Perangkat fisik dan kalibrasi tidak disertakan.</p>
+          <p><strong>Pembayaran</strong> Sistem hanya menghasilkan rekomendasi. Transfer dana membutuhkan otorisasi.</p>
+          <p><strong>Keamanan pangan</strong> Hasil tidak menggantikan inspeksi, laboratorium, atau keputusan otoritas.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SAFEGUARD EAT v1.0.0</span>
+      <span>Implementasi referensi Hak Cipta Program Komputer</span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

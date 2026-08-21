@@ -1,0 +1,7 @@
+{
+  "observed_at": "2026-01-01T08:00:00Z",
+  "temperature_c": 6.5,
+  "humidity_percent": 68,
+  "location_label": "Hub agregat demonstrasi",
+  "device_id": "SIMULATED-IOT-001"
+}
