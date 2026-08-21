@@ -1,0 +1,26 @@
+services:
+  api:
+    build: .
+    environment:
+      DATABASE_PATH: /data/safeguard_eat.db
+      DISTRIBUTION_MAX_TEMPERATURE_C: "8"
+      MAX_DELIVERY_DELAY_MINUTES: "30"
+      MIN_NUTRITION_COMPLIANCE_PERCENT: "90"
+      ALLOWED_ORIGINS: http://localhost:5500
+    ports:
+      - "8000:8000"
+    volumes:
+      - safeguard-data:/data
+
+  dashboard:
+    image: python:3.12-alpine
+    command: python -m http.server 5500 --directory /frontend
+    ports:
+      - "5500:5500"
+    volumes:
+      - ./frontend:/frontend:ro
+    depends_on:
+      - api
+
+volumes:
+  safeguard-data:

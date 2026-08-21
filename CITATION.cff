@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "Jika menggunakan materi ini dengan izin pemegang hak, sitasikan perangkat lunak berikut."
+title: "SAFEGUARD EAT"
+type: software
+version: 1.0.0
+date-released: 2026-08-21
+authors:
+  - family-names: Nastama
+    given-names: Muhammad Hilmiy
+  - family-names: Santosa
+    given-names: Keenand Zainraja
+  - family-names: Nandani
+    given-names: M. Haikal Hexa
+  - family-names: Arifin
+    given-names: Miftahol
+  - family-names: Qisthani
+    given-names: Nabila Noor
+  - family-names: Hidayatuloh
+    given-names: Syarif
+  - family-names: Kasanah
+    given-names: Yulinda Uswatun
+abstract: >-
+  Implementasi referensi traceability batch pangan, telemetri IoT, verifikasi
+  gizi, quality gate, dan audit integritas data untuk Program Makanan Bergizi Gratis.
+repository-code: "https://github.com/miftaholarifin-star/SAFEGUARD-EAT"
+license: LicenseRef-Proprietary
